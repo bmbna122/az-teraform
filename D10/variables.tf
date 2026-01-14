@@ -1,7 +1,7 @@
 variable "environment" {
   type        = string
   description = "The environment for all resources"
-  default     = "staging"
+  default     = "stag"
 }
 
 variable "account_names" {
