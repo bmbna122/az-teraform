@@ -1,0 +1,1 @@
+vm_size = "standard_B1s"
