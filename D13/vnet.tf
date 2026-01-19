@@ -112,6 +112,30 @@ resource "azurerm_network_security_group" "nsg" {
     #     destination_address_prefix = "*"
     #     description = "Allow inbound SSH traffic"
     # }
+    security_rule {
+      name                       = "allow-azure-load-balancer"
+      priority                   = 110
+      direction                  = "Inbound"
+      access                     = "Allow"
+      protocol                   = "Tcp"
+      source_port_range          = "*"
+      destination_port_range     = "80"
+      source_address_prefix      = "AzureLoadBalancer"
+      destination_address_prefix = "*"
+      description                = "Allow Azure Load Balancer health probes"
+}
+  security_rule {
+    name                       = "allow-http-internet"
+    priority                   = 120
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_address_prefix      = "Internet"
+    source_port_range          = "*"
+    destination_port_range     = "80"
+    destination_address_prefix = "*"
+  }
+
 }
 
 # associate nsg to subnet
