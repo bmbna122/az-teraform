@@ -9,3 +9,6 @@ crash.log
 
 # IDE
 .vscode/
+
+# ssh keys
+.ssh/
