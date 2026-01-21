@@ -12,3 +12,5 @@ crash.log
 
 # ssh keys
 .ssh/
+
+terraform.tfvars
