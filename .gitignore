@@ -14,3 +14,5 @@ crash.log
 .ssh/
 
 terraform.tfvars
+
+local.settings.json
